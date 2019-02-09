@@ -23,19 +23,24 @@ class Neuron:
         self.connections = []
         
     
+    def rawInput(self , rawInput):
+        self.activation = self.sigmoid(rawInput - self.bias)
+
+    
     def connect(self , neuron):
         self.connections.append(self.Connection(neuron))
 
 
     def print(self):
         print("Bias: " + str(self.bias))
+        print("Activation: " + str(self.activation))
         print("Connections: ")
         
         for i in self.connections:
             i.print()
         
         print()
-        
+
 
     def sigmoid(self , input):
         e = 2.71828

@@ -1,4 +1,5 @@
 from Layer import Layer
+from Neuron import Neuron
 
 class Network:
     def __init__(self , layerSizes):
@@ -19,4 +20,8 @@ class Network:
             print("Layer " + str(i) + ": ")
             self.layers[i].print()
     
-    
+
+    def setInput(self , input):
+        for i in range(len(self.layers[0].neurons)):
+            self.layers[0].neurons[i].rawInput(input[i])
+            

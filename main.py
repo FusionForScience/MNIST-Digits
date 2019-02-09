@@ -7,9 +7,10 @@ mndata = MNIST('Resources')
 
 images, labels = mndata.load_training()
 
-print(mndata.display(images[0]))
-print(labels[0])
+# print(mndata.display(images[0]))
+# print(labels[0])
 
-network = Network([IMG_WIDTH * IMG_WIDTH , 16 , 16 , 10])
+network = Network([IMG_WIDTH * IMG_WIDTH])
+network.setInput(list(reversed(images[2])))
 
 network.print()
