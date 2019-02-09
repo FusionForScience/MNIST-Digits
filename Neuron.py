@@ -20,10 +20,17 @@ class Neuron:
         random.seed()
         self.bias = 0
         self.activation = 0
+        self.connections = []
         
+    
+    def connect(self , neuron):
+        self.connections.append(self.Connection(neuron))
+
 
     def print(self):
         print("Bias: " + str(self.bias))
+        print("Connections: ")
+        print(self.connections)
         
 
     def sigmoid(self , input):
