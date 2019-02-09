@@ -30,7 +30,11 @@ class Neuron:
     def print(self):
         print("Bias: " + str(self.bias))
         print("Connections: ")
-        print(self.connections)
+        
+        for i in self.connections:
+            i.print()
+        
+        print()
         
 
     def sigmoid(self , input):
