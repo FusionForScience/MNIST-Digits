@@ -31,6 +31,11 @@ class Neuron:
         self.connections.append(self.Connection(neuron))
 
 
+    def propagate(self):
+        for i in self.connections:
+            i.connection.rawInput(self.activation * i.weight)
+
+
     def print(self):
         print("Bias: " + str(self.bias))
         print("Activation: " + str(self.activation))

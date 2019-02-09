@@ -24,4 +24,9 @@ class Network:
     def setInput(self , input):
         for i in range(len(self.layers[0].neurons)):
             self.layers[0].neurons[i].rawInput(input[i])
+
+    
+    def propagate(self):
+        for i in self.layers:
+            i.propagate()
             

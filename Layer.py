@@ -15,6 +15,14 @@ class Layer:
     
 
     def connect(self , layer):
+        self.connection = layer
+
         for i in self.neurons:
             for j in layer.neurons:
                 i.connect(j)
+    
+
+    # MAKE SURE YOU CALL CONNECT FIRST
+    def propagate(self):
+        for i in self.neurons:
+            i.propagate()
