@@ -13,3 +13,8 @@ class Layer:
         for i in self.neurons:
             i.print()
     
+
+    def connect(self , layer):
+        for i in self.neurons:
+            for j in layer.neurons:
+                i.connect(j)
